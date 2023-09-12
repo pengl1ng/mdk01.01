@@ -23,6 +23,8 @@
             </StackPanel>
             <Button x:Name="btnLog" Content="Войти" Click="btnLog_Click"
                     Style="{StaticResource btnAuthStyle}"/>
+            <Button Style="{StaticResource btnAuthStyle}" x:Name="btnToReg"
+                    Content="Регистрация" Click="btnToReg_Click"/>
         </StackPanel>
     </Grid>
 </Page>

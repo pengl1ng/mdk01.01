@@ -10,5 +10,6 @@ namespace FirstAppChupSamozvan
     public static class Helper
     {
         public static Frame MainFrame;
+        public static DbEntities dbConnect = new DbEntities();
     }
 }

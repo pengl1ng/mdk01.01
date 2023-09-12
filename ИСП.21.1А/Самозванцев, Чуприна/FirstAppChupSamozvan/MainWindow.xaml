@@ -20,7 +20,8 @@
                 Style="{StaticResource tboxStyle}"
                 Text="Наша первая программа на WPF"/>
             <Button x:Name="btnHello" Content="Приветствие" Click="btnHello_Click"
-                    Width="100" Height="50" Margin="5"/>
+                    Width="100" Height="50" Margin="5"
+                    Style="{StaticResource btnAuthStyle}"/>
         </StackPanel>
         
         <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"
