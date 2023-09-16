@@ -1,0 +1,41 @@
+﻿<Page x:Class="FirstAppChupSamozvan.Pages.PR1Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstAppChupSamozvan.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="500"
+      Title="PR1Page">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Image Source="\Images\zadanie.jpg" Width="300"></Image>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource tboxStyle}" Text="Введите x:"
+                           FontSize="10" Width="100"/>
+                <TextBox Style="{StaticResource tblockAuth}" x:Name="tboxX"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource tboxStyle}" Text="Введите y:"
+                           FontSize="10" Width="100"/>
+                <TextBox Style="{StaticResource tblockAuth}" x:Name="tboxY"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource tboxStyle}" Text="Введите z:"
+                           FontSize="10" Width="100"/>
+                <TextBox Style="{StaticResource tblockAuth}" x:Name="tboxZ"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Style="{StaticResource tboxStyle}" Text="Результат:"
+                           FontSize="10" Width="100"/>
+                <ListBox x:Name="lboxRes" Height="100"></ListBox>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnRes" Style="{StaticResource btnAuthStyle}" 
+                        Click="btnRes_Click" Content="Выполнить"
+                        Width="120"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

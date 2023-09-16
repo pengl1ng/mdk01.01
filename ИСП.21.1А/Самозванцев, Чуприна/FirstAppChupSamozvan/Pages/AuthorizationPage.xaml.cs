@@ -36,6 +36,7 @@ namespace FirstAppChupSamozvan.Pages
                     if (user != null)
                     {
                         MessageBox.Show($"Пользователь {tboxLogin.Text} авторизован");
+                        Helper.MainFrame.Navigate(new PR1Page());
                     }
                     else
                     {
