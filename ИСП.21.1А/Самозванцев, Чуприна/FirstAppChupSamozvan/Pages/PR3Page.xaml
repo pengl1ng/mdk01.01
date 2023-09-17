@@ -1,0 +1,75 @@
+﻿<Page x:Class="FirstAppChupSamozvan.Pages.PR3Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstAppChupSamozvan.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="500"
+      Title="PR3Page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Введите значение X0:" 
+           Margin="10"/>
+            <TextBox Name="txtX0" Margin="10" Width="100"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Введите значение Xk:" 
+                       Margin="10"/>
+            <TextBox Name="txtXk" Margin="10" Width="100"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" 
+            HorizontalAlignment="Center">
+            <TextBlock Text="Введите значение Dx:" 
+               Margin="10"/>
+            <TextBox Name="txtDx" Margin="10" Width="100"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" 
+            HorizontalAlignment="Center">
+            <TextBlock Text="Введите значение A:" 
+               Margin="10"/>
+            <TextBox Name="txtA" Margin="10" Width="100"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Введите значение B:" 
+                       Margin="10"/>
+            <TextBox Name="txtB" Margin="10" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Vertical"
+            HorizontalAlignment="Center">
+            <TextBlock Text="Результат выполнения программы:"
+               Margin="10"/>
+            <ListBox Name="lstResult" Margin="10"
+             Height="150"/>
+        </StackPanel>
+        <DockPanel Grid.Row="6" 
+           HorizontalAlignment="Center">
+            <Button Name="btnBack" Height="30" Style="{StaticResource btnNextStyle}"
+            Width="130"
+            Content="Назад" Margin="10"
+            Click="btnBack1_Click"/>
+            <Button Name="btnCalc" Height="30" Style="{StaticResource btnAuthStyle}"
+            Width="130"
+            Content="Выполнить" Margin="10"
+            Click="btnCalc1_Click"/>
+            <Button Name="btnNext" Height="30" Style="{StaticResource btnNextStyle}"
+            Width="130"
+            Content="Далее" Margin="10"
+            Click="btnNext1_Click"/>
+        </DockPanel>
+    </Grid>
+</Page>

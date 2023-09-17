@@ -31,11 +31,16 @@
                            FontSize="10" Width="100"/>
                 <ListBox x:Name="lboxRes" Height="100"></ListBox>
             </StackPanel>
-            <StackPanel>
-                <Button x:Name="btnRes" Style="{StaticResource btnAuthStyle}" 
+            <DockPanel Grid.Row="2" 
+                       HorizontalAlignment="Center">
+                <Button x:Name="btnRes" Height="40" Style="{StaticResource btnAuthStyle}" 
                         Click="btnRes_Click" Content="Выполнить"
-                        Width="120"/>
-            </StackPanel>
+                        Width="150"/>
+
+                <Button x:Name="btnRest" Height="40" Style="{StaticResource btnNextStyle}" 
+                       Click="btnRest_Click" Content="Продолжить"
+                       Width="150"/>
+            </DockPanel>
         </StackPanel>
     </Grid>
 </Page>
