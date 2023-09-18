@@ -21,11 +21,14 @@
                     Content="Прочитать файл" Width="120"
                     Click="btnReadFile_Click"/>
             <Button x:Name="btnRes" Style="{StaticResource btnAuthStyle}"
-                    Content="Результат" Width="120"
+                    Content="Результат" Width="60"
                     Click="btnRes_Click"/>
+            <Button x:Name="btnClear" Style="{StaticResource btnAuthStyle}"
+                    Content="Очистить" Click="btnClear_Click"
+                    Width="60"/>
             <TextBlock x:Name="tblockRes" Text="Количество 0: Количество 1:"
                        Style="{StaticResource tboxStyle}"
-                       FontSize="13"/>
+                       FontSize="10"/>
         </StackPanel>
     </Grid>
 </Page>

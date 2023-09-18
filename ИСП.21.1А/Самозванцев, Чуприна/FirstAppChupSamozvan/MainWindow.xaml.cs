@@ -30,7 +30,9 @@ namespace FirstAppChupSamozvan
 
         private void btnHello_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hello, World!");
+            MessageBox.Show($"Работы выоплнили: \n" +
+                $"Самозванцев Владимир и Чуприна Вероника\n" +
+                $"гр. ИСП.21.1А");
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,11 +56,22 @@ namespace FirstAppChupSamozvan.Pages
                     i++;
                 }
                 tblockRes.Text = $"Количество 0: {countZero} Колиечство 1: {countOne}";
+                string line = lboxInput.SelectedItem.ToString();
+                StreamWriter sw = new StreamWriter(@"Rezult.txt");
+                sw.WriteLine($"Выполнили: Самозванцев, Чуприна гр. ИСП.21.1А");
+                sw.WriteLine($"Изначальная строка: {line}");
+                sw.WriteLine($"Количество 0: {countZero} Колиечство 1: {countOne}");
+                sw.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}");
             }
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            lboxInput.Items.Clear();
         }
     }
 }
