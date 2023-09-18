@@ -40,5 +40,10 @@ namespace FirstAppChupSamozvan.Pages
             lboxRes.Items.Add($"z = {z}");
             lboxRes.Items.Add($"Результат: t = {t}");
         }
+
+        private void btnToPR6_Click(object sender, RoutedEventArgs e)
+        {
+            Helper.MainFrame.Navigate(new PR6Page());
+        }
     }
 }
