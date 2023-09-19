@@ -31,9 +31,12 @@
                            FontSize="10" Width="100"/>
                 <ListBox x:Name="lboxRes" Height="100"></ListBox>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btnRes" Style="{StaticResource btnAuthStyle}" 
                         Click="btnRes_Click" Content="Выполнить"
+                        Width="120"/>
+                <Button x:Name="btnToPR2" Style="{StaticResource btnAuthStyle}"
+                        Click="btnToPR2_Click" Content="К ПР2"
                         Width="120"/>
             </StackPanel>
         </StackPanel>

@@ -1,0 +1,67 @@
+﻿<Page x:Class="FirstAppChupSamozvan.Pages.PR2Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstAppChupSamozvan.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PR2Page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0" VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource tboxStyle}" 
+                       Text="Практическая работа 2" Width="480"
+                       Margin="3"/>
+            <TextBlock Style="{StaticResource tboxStyle}"
+                       Text="Вариант: 8. Выполнил: Самозванцев В. А."
+                       Width="480" Margin="3"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Введите M:" Style="{StaticResource tboxAuth}"
+                           Width="80"/>
+                <TextBox Style="{StaticResource tblockAuth}"
+                         x:Name="tboxM"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Введите X:" Style="{StaticResource tboxAuth}"
+                            Width="80"/>
+                <TextBox Style="{StaticResource tblockAuth}"
+                         x:Name="tboxX"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton Content="sh(x)" VerticalAlignment="Center"
+                             x:Name="rbtnSh" IsChecked="True" Margin="5"/>
+                <RadioButton Content="x^2" VerticalAlignment="Center"
+                             x:Name="rbtnKvad" Margin="5"/>
+                <RadioButton Content="exp(x)" VerticalAlignment="Center"
+                             x:Name="rbtnExp" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource tboxAuth}"
+                           Text="Результат выполнения" Width="160"
+                           TextAlignment="Center"/>
+                <ListBox x:Name="lboxRes" Width="400" Height="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnRes" Content="Вычислить"
+                        Style="{StaticResource btnAuthStyle}"
+                        Width="120" Height="30"
+                        Click="btnRes_Click"/>
+                <Button x:Name="btnClear" Content="Очистить"
+                        Style="{StaticResource btnAuthStyle}"
+                        Width="120" Height="30"
+                        Click="btnClear_Click"/>
+                <Button x:Name="btnToPR3" Content="К ПР3"
+                        Style="{StaticResource btnAuthStyle}"
+                        Width="120" Height="30"
+                        Click="btnToPR3_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

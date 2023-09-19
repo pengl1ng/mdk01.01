@@ -47,6 +47,10 @@ namespace FirstAppChupSamozvan.Pages
                 {
                     MessageBox.Show($"{ex.Message}");
                 }
+                finally
+                {
+                    Helper.MainFrame.Navigate(new PR1Page());
+                }
             }
             else 
             {
