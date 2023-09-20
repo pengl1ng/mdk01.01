@@ -79,6 +79,9 @@
     <Compile Include="Pages\PR3Page.xaml.cs">
       <DependentUpon>PR3Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PR7Page.xaml.cs">
+      <DependentUpon>PR7Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Roles.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PR3Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PR7Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

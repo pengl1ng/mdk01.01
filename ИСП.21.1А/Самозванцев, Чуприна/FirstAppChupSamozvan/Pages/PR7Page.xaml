@@ -1,0 +1,32 @@
+﻿<Page x:Class="FirstAppChupSamozvan.Pages.PR7Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstAppChupSamozvan.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PR7Page">
+
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Text="Результат выполнения:"
+                           Style="{StaticResource tboxAuth}"
+                           Width="240" TextAlignment="Center"/>
+                <ListBox x:Name="lboxRes"
+                         Width="400" Height="300"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button x:Name="btnCalc" Content="Вычислить"
+                        Width="120" Click="btnCalc_Click"
+                        Style="{StaticResource btnAuthStyle}"/>
+                <Button x:Name="btnCLear" Content="Очистить"
+                        Width="120" Click="btnCLear_Click"
+                        Style="{StaticResource btnAuthStyle}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

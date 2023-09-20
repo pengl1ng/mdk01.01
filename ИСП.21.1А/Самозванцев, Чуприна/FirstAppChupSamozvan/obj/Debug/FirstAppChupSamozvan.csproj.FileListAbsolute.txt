@@ -100,3 +100,11 @@ D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\Firs
 D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR2Page.baml
 D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR3Page.g.cs
 D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR3Page.baml
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR1Page.g.cs
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR2Page.g.cs
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR3Page.g.cs
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR7Page.g.cs
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR1Page.baml
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR2Page.baml
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR3Page.baml
+F:\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR7Page.baml

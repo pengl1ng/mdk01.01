@@ -50,7 +50,7 @@ namespace FirstAppChupSamozvan.Pages
 
         private void btnToPR7_Click(object sender, RoutedEventArgs e)
         {
-
+            Helper.MainFrame.Navigate(new PR7Page());
         }
     }
 }
