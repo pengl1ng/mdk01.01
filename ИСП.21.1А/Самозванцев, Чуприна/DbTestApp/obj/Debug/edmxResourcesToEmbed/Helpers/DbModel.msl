@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище dbModelContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="Ученики">
+      <EntityTypeMapping TypeName="dbModel.Ученики">
+        <MappingFragment StoreEntitySet="Ученики">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Предмет" ColumnName="Предмет" />
+          <ScalarProperty Name="Школа" ColumnName="Школа" />
+          <ScalarProperty Name="Баллы" ColumnName="Баллы" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
