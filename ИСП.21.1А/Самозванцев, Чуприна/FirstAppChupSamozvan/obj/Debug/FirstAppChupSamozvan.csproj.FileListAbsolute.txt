@@ -101,3 +101,4 @@ C:\Users\chup5\OneDrive\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозван
 C:\Users\chup5\OneDrive\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\FirstAppChupSamozvan.csproj.CopyComplete
 C:\Users\chup5\OneDrive\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\FirstAppChupSamozvan.exe
 C:\Users\chup5\OneDrive\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\FirstAppChupSamozvan.pdb
+C:\Users\chup5\OneDrive\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\FirstAppChupSamozvan\obj\Debug\Pages\PR7Page.g.cs

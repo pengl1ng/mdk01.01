@@ -27,7 +27,7 @@ namespace FirstAppChupSamozvan.Pages
 
         private void btnNext1_Click(object sender, RoutedEventArgs e)
         {
-            Helper.MainFrame.Navigate(new PR4Page());
+            Helper.MainFrame.Navigate(new PR7Page());
         }
 
         private void btnBack1_Click(object sender, RoutedEventArgs e)

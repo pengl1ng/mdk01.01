@@ -25,7 +25,7 @@ namespace FirstAppChupSamozvan
         {
             InitializeComponent();
             Helper.MainFrame = mainFrame;
-            Helper.MainFrame.Navigate(new AuthorizationPage());
+            Helper.MainFrame.Navigate(new PR7Page());
         }
 
         private void btnHello_Click(object sender, RoutedEventArgs e)
