@@ -10,22 +10,47 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Orientation="Horizontal"
-                    VerticalAlignment="Center">
-            <ComboBox x:Name="cboxPredmet" IsEditable="True"
-                      Margin="10" SelectionChanged="cboxPredmet_SelectionChanged">
-                
-            </ComboBox>
 
-            <TextBox MinWidth="350" x:Name="tboxSearch" Margin="5" TextChanged="tboxSearch_TextChanged"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Style="{StaticResource LeftColumn}" Grid.RowSpan="2">
+            <StackPanel Style="{StaticResource LeftPanel}">
+                <TextBlock Text="Сортировка по предмету:" Style="{StaticResource TextLeftPanel}"/>
+                <ComboBox x:Name="cboxPredmet" IsEditable="True"
+                          Margin="10" SelectionChanged="cboxPredmet_SelectionChanged">
+                </ComboBox>
+
+                <TextBlock Text="Поиск по фамилии:" Style="{StaticResource TextLeftPanel}"/>
+                <TextBox x:Name="tboxSearch" Margin="5" TextChanged="tboxSearch_TextChanged"/>
+
+                <TextBlock Text="Сортировка по баллам:" Style="{StaticResource TextLeftPanel}"/>
+                <RadioButton Content="По возрастанию" Name="rbtnAsc" Margin="5" Click="rbtnAsc_Click"/>
+                <RadioButton Content="По убыванию" Name="rbtnDesc" Margin="5" Click="rbtnDesc_Click"/>
+
+                <Button Content="Анализ данных" x:Name="btnRes" Click="btnRes_Click"
+                        Margin="5"/>
+                <ListBox x:Name="lboxRes" Width="150" Height="110"
+                         Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click"/>
+                <Button x:Name="btnDelete" Content="Удалить" Click="btnDelete_Click"/>
+                <Button x:Name="btnRef" Content="Обновить" Click="btnRef_Click"/>
+            </StackPanel>
+        </Grid>
         
         <DataGrid x:Name="dgStud" AutoGenerateColumns="False"
-                  Grid.Row="1">
+                  Grid.Row="0" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия студента"
                                     Binding="{Binding Фамилия}"

@@ -4,10 +4,31 @@
              xmlns:local="clr-namespace:DbTestApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="TextBlock" x:Key="TextLeftPanel">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="#D4ADFC"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
         <Style TargetType="TextBlock" x:Key="tblockUp">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="LeftPanel">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Orientation" Value="Vertical"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="LeftColumn">
+            <Setter Property="Background" Value="#0C134F"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Foreground" Value="#D4ADFC"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="tboxAdd">
+            <Setter Property="Width" Value="150"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="tblockAdd">
+            <Setter Property="Width" Value="70"/>
         </Style>
     </Application.Resources>
 </Application>

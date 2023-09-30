@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\DbTestApp\App.xaml
-2-1299322508
+3-784382652
 22121224353
-12-1354793395
+13-448859699
 18-657090867
-MainWindow.xaml;Pages\StudentsPage.xaml;
+MainWindow.xaml;Pages\PageAddEdit.xaml;Pages\StudentsPage.xaml;
 
-False
+True
 
