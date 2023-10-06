@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ModelDb" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Conferences">
+    <Key>
+      <PropertyRef Name="ConfId" />
+    </Key>
+    <Property Name="ConfId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConfName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConfDate" Type="date" Nullable="false" />
+    <Property Name="ConfPlace" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="RepId" />
+    </Key>
+    <Property Name="RepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RepTheme" Type="varchar" MaxLength="140" Nullable="false" />
+    <Property Name="RepAuthor" Type="int" Nullable="false" />
+    <Property Name="RepConf" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Scientists">
+    <Key>
+      <PropertyRef Name="ScId" />
+    </Key>
+    <Property Name="ScId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScFIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ScDeg" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ScCountry" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScOrg" Type="varchar" MaxLength="70" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Reports_Conferences">
+    <End Role="Conferences" Type="Self.Conferences" Multiplicity="1" />
+    <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conferences">
+        <PropertyRef Name="ConfId" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="RepConf" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reports_Scientists">
+    <End Role="Scientists" Type="Self.Scientists" Multiplicity="1" />
+    <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scientists">
+        <PropertyRef Name="ScId" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="RepAuthor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelDbContainer">
+    <EntitySet Name="Conferences" EntityType="Self.Conferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Scientists" EntityType="Self.Scientists" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Reports_Conferences" Association="Self.FK_Reports_Conferences">
+      <End Role="Conferences" EntitySet="Conferences" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reports_Scientists" Association="Self.FK_Reports_Scientists">
+      <End Role="Scientists" EntitySet="Scientists" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

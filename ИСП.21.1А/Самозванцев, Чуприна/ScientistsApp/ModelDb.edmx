@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ModelDb" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Conferences">
+          <Key>
+            <PropertyRef Name="ConfId" />
+          </Key>
+          <Property Name="ConfId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConfName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConfDate" Type="date" Nullable="false" />
+          <Property Name="ConfPlace" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="RepId" />
+          </Key>
+          <Property Name="RepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RepTheme" Type="varchar" MaxLength="140" Nullable="false" />
+          <Property Name="RepAuthor" Type="int" Nullable="false" />
+          <Property Name="RepConf" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scientists">
+          <Key>
+            <PropertyRef Name="ScId" />
+          </Key>
+          <Property Name="ScId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScFIO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ScDeg" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ScCountry" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ScOrg" Type="varchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Reports_Conferences">
+          <End Role="Conferences" Type="Self.Conferences" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Conferences">
+              <PropertyRef Name="ConfId" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="RepConf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Scientists">
+          <End Role="Scientists" Type="Self.Scientists" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Scientists">
+              <PropertyRef Name="ScId" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="RepAuthor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ModelDbContainer">
+          <EntitySet Name="Conferences" EntityType="Self.Conferences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scientists" EntityType="Self.Scientists" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Reports_Conferences" Association="Self.FK_Reports_Conferences">
+            <End Role="Conferences" EntitySet="Conferences" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Scientists" Association="Self.FK_Reports_Scientists">
+            <End Role="Scientists" EntitySet="Scientists" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Conferences">
+          <Key>
+            <PropertyRef Name="ConfId" />
+          </Key>
+          <Property Name="ConfId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConfName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ConfDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ConfPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Conferences" FromRole="Conferences" ToRole="Reports" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="RepId" />
+          </Key>
+          <Property Name="RepId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RepTheme" Type="String" MaxLength="140" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RepAuthor" Type="Int32" Nullable="false" />
+          <Property Name="RepConf" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Conferences" Relationship="Self.FK_Reports_Conferences" FromRole="Reports" ToRole="Conferences" />
+          <NavigationProperty Name="Scientists" Relationship="Self.FK_Reports_Scientists" FromRole="Reports" ToRole="Scientists" />
+        </EntityType>
+        <EntityType Name="Scientists">
+          <Key>
+            <PropertyRef Name="ScId" />
+          </Key>
+          <Property Name="ScId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScFIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ScDeg" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ScCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ScOrg" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Scientists" FromRole="Scientists" ToRole="Reports" />
+        </EntityType>
+        <Association Name="FK_Reports_Conferences">
+          <End Role="Conferences" Type="Self.Conferences" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Conferences">
+              <PropertyRef Name="ConfId" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="RepConf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Scientists">
+          <End Role="Scientists" Type="Self.Scientists" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Scientists">
+              <PropertyRef Name="ScId" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="RepAuthor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Conferences" EntityType="Self.Conferences" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" />
+          <EntitySet Name="Scientists" EntityType="Self.Scientists" />
+          <AssociationSet Name="FK_Reports_Conferences" Association="Self.FK_Reports_Conferences">
+            <End Role="Conferences" EntitySet="Conferences" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Scientists" Association="Self.FK_Reports_Scientists">
+            <End Role="Scientists" EntitySet="Scientists" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelDbContainer" CdmEntityContainer="DbEntities">
+          <EntitySetMapping Name="Conferences">
+            <EntityTypeMapping TypeName="ModelDb.Conferences">
+              <MappingFragment StoreEntitySet="Conferences">
+                <ScalarProperty Name="ConfId" ColumnName="ConfId" />
+                <ScalarProperty Name="ConfName" ColumnName="ConfName" />
+                <ScalarProperty Name="ConfDate" ColumnName="ConfDate" />
+                <ScalarProperty Name="ConfPlace" ColumnName="ConfPlace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="ModelDb.Reports">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="RepId" ColumnName="RepId" />
+                <ScalarProperty Name="RepTheme" ColumnName="RepTheme" />
+                <ScalarProperty Name="RepAuthor" ColumnName="RepAuthor" />
+                <ScalarProperty Name="RepConf" ColumnName="RepConf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scientists">
+            <EntityTypeMapping TypeName="ModelDb.Scientists">
+              <MappingFragment StoreEntitySet="Scientists">
+                <ScalarProperty Name="ScId" ColumnName="ScId" />
+                <ScalarProperty Name="ScFIO" ColumnName="ScFIO" />
+                <ScalarProperty Name="ScDeg" ColumnName="ScDeg" />
+                <ScalarProperty Name="ScCountry" ColumnName="ScCountry" />
+                <ScalarProperty Name="ScOrg" ColumnName="ScOrg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

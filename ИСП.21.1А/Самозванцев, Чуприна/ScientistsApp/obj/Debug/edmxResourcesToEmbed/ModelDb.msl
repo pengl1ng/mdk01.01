@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ModelDbContainer" CdmEntityContainer="DbEntities">
+    <EntitySetMapping Name="Conferences">
+      <EntityTypeMapping TypeName="ModelDb.Conferences">
+        <MappingFragment StoreEntitySet="Conferences">
+          <ScalarProperty Name="ConfId" ColumnName="ConfId" />
+          <ScalarProperty Name="ConfName" ColumnName="ConfName" />
+          <ScalarProperty Name="ConfDate" ColumnName="ConfDate" />
+          <ScalarProperty Name="ConfPlace" ColumnName="ConfPlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="ModelDb.Reports">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="RepId" ColumnName="RepId" />
+          <ScalarProperty Name="RepTheme" ColumnName="RepTheme" />
+          <ScalarProperty Name="RepAuthor" ColumnName="RepAuthor" />
+          <ScalarProperty Name="RepConf" ColumnName="RepConf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scientists">
+      <EntityTypeMapping TypeName="ModelDb.Scientists">
+        <MappingFragment StoreEntitySet="Scientists">
+          <ScalarProperty Name="ScId" ColumnName="ScId" />
+          <ScalarProperty Name="ScFIO" ColumnName="ScFIO" />
+          <ScalarProperty Name="ScDeg" ColumnName="ScDeg" />
+          <ScalarProperty Name="ScCountry" ColumnName="ScCountry" />
+          <ScalarProperty Name="ScOrg" ColumnName="ScOrg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
