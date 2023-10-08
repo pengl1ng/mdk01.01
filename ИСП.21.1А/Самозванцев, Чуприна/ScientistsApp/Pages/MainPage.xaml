@@ -5,8 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ScientistsApp.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="900"
-      Title="MainPage">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,25 +25,36 @@
             <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-                <TextBlock Text="Поиск по фамилии"
-                           Style="{StaticResource TBlockLeftPanel}"/>
-                <TextBox x:Name="tboxSearch" TextChanged="tboxSearch_TextChanged"
-                         Style="{StaticResource TBoxLeftPanel}"/>
-                <TextBlock Text="Сортировка по конференциям"
-                           Style="{StaticResource TBlockLeftPanel}"/>
-                <ComboBox x:Name="cboxConf" IsEditable="False"
-                          SelectionChanged="cboxConf_SelectionChanged"/>
-                <TextBlock Text="Сортировка по организациям"
-                           Style="{StaticResource TBlockLeftPanel}"/>
-                <ComboBox x:Name="cboxOrg" IsEditable="False"
-                          SelectionChanged="cboxOrg_SelectionChanged"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Поиск по фамилии"
+                               Style="{StaticResource TBlockLeftPanel}"/>
+                    <TextBox x:Name="tboxSearch" TextChanged="tboxSearch_TextChanged"
+                             Style="{StaticResource TBoxLeftPanel}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Сортировка по конференциям"
+                               Style="{StaticResource TBlockLeftPanel}"/>
+                    <ComboBox x:Name="cboxConf" IsEditable="False"
+                              SelectionChanged="cboxConf_SelectionChanged"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Сортировка по организациям"
+                               Style="{StaticResource TBlockLeftPanel}"/>
+                    <ComboBox x:Name="cboxOrg" IsEditable="False"
+                              SelectionChanged="cboxOrg_SelectionChanged"/>
+                </StackPanel>
+
+                <Button x:Name="btnClearFilters" Content="Очистить фильтры"
+                        Click="btnClearFilters_Click" Margin="5"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1"
               Style="{StaticResource LeftAndBotPanelGrid}">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Button x:Name="btnAdd" Content="Добавить запись"
+                <Button x:Name="btnAdd" Content="Добавить доклад"
                         Click="btnAdd_Click"
                         Style="{StaticResource ButtonMain}"/>
                 <Button x:Name="btnDel" Content="Удалить"
@@ -50,19 +63,10 @@
                 <Button x:Name="btnRef" Content="Обновить"
                         Click="btnRef_Click"
                         Style="{StaticResource ButtonMain}"/>
-                <Button x:Name="btnChangeRep" Content="Изменить доклад"
-                        Click="btnChangeRep_Click"
-                        Style="{StaticResource ButtonMain}"/>
-                <Button x:Name="btnChangeSci" Content="Изменить докладчика"
-                        Click="btnChangeSci_Click"
-                        Style="{StaticResource ButtonMain}"/>
-                <Button x:Name="btnChangeConf" Content="Изменить конференцию"
-                        Click="btnChangeConf_Click"
-                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgScientists" Grid.Column="1"
+        <DataGrid x:Name="dgReports" Grid.Column="1"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название доклада"
@@ -105,6 +109,16 @@
                                     Width="*"
                                     CanUserSort="False"
                                     ElementStyle="{StaticResource WrapText}"/>
+                <DataGridTemplateColumn Header="Действия"
+                                        Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnChangeRep" Content="Изменить"
+                                    Click="btnChangeRep_Click"
+                                    Style="{StaticResource ButtonMain}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

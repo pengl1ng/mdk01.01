@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ModelDb" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище DbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Conferences">
           <Key>
             <PropertyRef Name="ConfId" />
@@ -20,6 +20,7 @@
           </Key>
           <Property Name="RepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RepTheme" Type="varchar" MaxLength="140" Nullable="false" />
+          <Property Name="RepImage" Type="varchar" MaxLength="50" />
           <Property Name="RepAuthor" Type="int" Nullable="false" />
           <Property Name="RepConf" Type="int" Nullable="false" />
         </EntityType>
@@ -57,7 +58,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище ModelDbContainer">
+        <EntityContainer Name="Хранилище DbModelContainer">
           <EntitySet Name="Conferences" EntityType="Self.Conferences" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Scientists" EntityType="Self.Scientists" Schema="dbo" store:Type="Tables" />
@@ -74,7 +75,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ModelDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Conferences">
           <Key>
             <PropertyRef Name="ConfId" />
@@ -91,6 +92,7 @@
           </Key>
           <Property Name="RepId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RepTheme" Type="String" MaxLength="140" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RepImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="RepAuthor" Type="Int32" Nullable="false" />
           <Property Name="RepConf" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Conferences" Relationship="Self.FK_Reports_Conferences" FromRole="Reports" ToRole="Conferences" />
@@ -149,9 +151,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelDbContainer" CdmEntityContainer="DbEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DbModelContainer" CdmEntityContainer="DbEntities">
           <EntitySetMapping Name="Conferences">
-            <EntityTypeMapping TypeName="ModelDb.Conferences">
+            <EntityTypeMapping TypeName="DbModel.Conferences">
               <MappingFragment StoreEntitySet="Conferences">
                 <ScalarProperty Name="ConfId" ColumnName="ConfId" />
                 <ScalarProperty Name="ConfName" ColumnName="ConfName" />
@@ -161,17 +163,18 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reports">
-            <EntityTypeMapping TypeName="ModelDb.Reports">
+            <EntityTypeMapping TypeName="DbModel.Reports">
               <MappingFragment StoreEntitySet="Reports">
                 <ScalarProperty Name="RepId" ColumnName="RepId" />
                 <ScalarProperty Name="RepTheme" ColumnName="RepTheme" />
+                <ScalarProperty Name="RepImage" ColumnName="RepImage" />
                 <ScalarProperty Name="RepAuthor" ColumnName="RepAuthor" />
                 <ScalarProperty Name="RepConf" ColumnName="RepConf" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Scientists">
-            <EntityTypeMapping TypeName="ModelDb.Scientists">
+            <EntityTypeMapping TypeName="DbModel.Scientists">
               <MappingFragment StoreEntitySet="Scientists">
                 <ScalarProperty Name="ScId" ColumnName="ScId" />
                 <ScalarProperty Name="ScFIO" ColumnName="ScFIO" />

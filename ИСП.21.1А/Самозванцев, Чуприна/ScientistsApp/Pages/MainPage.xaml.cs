@@ -24,70 +24,62 @@ namespace ScientistsApp.Pages
     {
         DbEntities context = DbEntities.GetContext();
         List<Reports> reports = DbEntities.GetContext().Reports.ToList();
+        List<Reports> current = new List<Reports>();
         public MainPage()
         {
             InitializeComponent();
 
-            var confs = DbEntities.GetContext().Conferences.Select(x => x.ConfName).Distinct().ToList();
-            cboxConf.Items.Add("Все конференции");
-            cboxConf.SelectedIndex = 0;
-            foreach (var conf in confs)
-            {
-                cboxConf.Items.Add(conf);
-            }
+            current = reports;
+            dgReports.ItemsSource = current;
 
-            var orgs = DbEntities.GetContext().Scientists.Select(x => x.ScOrg).Distinct().ToList();
-            cboxOrg.Items.Add("Все организации");
-            cboxOrg.SelectedIndex = 0;
-            foreach (var org in orgs)
-            {
-                cboxOrg.Items.Add(org);
-            }
+            cboxConf.ItemsSource = context.Conferences.ToList();
+            cboxConf.SelectedValue = "ConfId";
+            cboxConf.DisplayMemberPath = "ConfName";
 
-            dgScientists.ItemsSource = reports;
+            cboxOrg.ItemsSource = context.Scientists.Select(x => x.ScOrg).Distinct().ToList(); 
+        }
+        /// <summary>
+        /// Обновление фильтров
+        /// </summary>
+        private void UpdateFilters()
+        {
+            current = reports.Where(x => x.Scientists.ScFIO.ToLower().Contains(tboxSearch.Text.ToLower())).ToList();
+            if (cboxConf.SelectedIndex != -1) current = current.Where(x => x.RepConf == cboxConf.SelectedIndex + 1).ToList();
+            if (cboxOrg.SelectedIndex != -1) current = current.Where(x => x.Scientists.ScOrg == cboxOrg.SelectedValue.ToString()).ToList();
+            dgReports.ItemsSource = current;
         }
 
         private void cboxConf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                var conf = cboxConf.SelectedValue.ToString();
-                if (conf == "Все конференции") dgScientists.ItemsSource = reports;
-                else dgScientists.ItemsSource = reports.Where(x => x.Conferences.ConfName == conf);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            UpdateFilters();
         }
 
         private void tboxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dgScientists.ItemsSource = reports.Where(x => x.Scientists.ScFIO.ToLower().Contains(tboxSearch.Text.ToLower()));
+            UpdateFilters();
         }
 
         private void cboxOrg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                var org = cboxOrg.SelectedValue.ToString();
-                if (org == "Все организации") dgScientists.ItemsSource = reports;
-                else dgScientists.ItemsSource = reports.Where(x => x.Scientists.ScOrg == org);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            UpdateFilters();
         }
-
+        /// <summary>
+        /// Переход на страницу добавляения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             AppHelper.mainFrame.Navigate(new AddPage());
         }
-
+        /// <summary>
+        /// Удаление доклада
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            var selectedSci = dgScientists.SelectedItems.Cast<Reports>().ToList();
+            var selectedSci = dgReports.SelectedItems.Cast<Reports>().ToList();
 
             if ((MessageBox.Show($"Удалить информацию о {selectedSci.Count} докладах?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question)
@@ -98,7 +90,7 @@ namespace ScientistsApp.Pages
                     DbEntities.GetContext().Reports.RemoveRange(selectedSci);
                     DbEntities.GetContext().SaveChanges();
                     reports = DbEntities.GetContext().Reports.ToList();
-                    dgScientists.ItemsSource = reports;
+                    dgReports.ItemsSource = reports;
                 }
                 catch (Exception ex)
                 {
@@ -106,27 +98,37 @@ namespace ScientistsApp.Pages
                 }
             }
         }
-
+        /// <summary>
+        /// Обновление данных в дата гриде
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRef_Click(object sender, RoutedEventArgs e)
         {
             reports = DbEntities.GetContext().Reports.ToList();
-            dgScientists.ItemsSource = reports;
+            dgReports.ItemsSource = reports;
         }
-
+        /// <summary>
+        /// Переход на страницу изменения доклада
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChangeRep_Click(object sender, RoutedEventArgs e)
         {
-            Reports report = dgScientists.SelectedItem as Reports;
-            AppHelper.mainFrame.Navigate(new EditReportPage(report));
+            AppHelper.mainFrame.Navigate(new EditReportPage((sender as Button).DataContext as Reports));
         }
-
-        private void btnChangeSci_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Очистка фильтров
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnClearFilters_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnChangeConf_Click(object sender, RoutedEventArgs e)
-        {
-
+            cboxConf.SelectedIndex = -1;
+            cboxOrg.SelectedIndex = -1;
+            tboxSearch.Text = "";
+            current = reports;
+            dgReports.ItemsSource = current;
         }
     }
 }

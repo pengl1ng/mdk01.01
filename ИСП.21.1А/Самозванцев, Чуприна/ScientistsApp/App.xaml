@@ -15,6 +15,13 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="#E5CFF7"/>
+            <Setter Property="MinWidth" Value="110"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TBlockAdd" BasedOn="{StaticResource TBlockLeftPanel}">
+            <Setter Property="TextAlignment" Value="Left"/>
         </Style>
         <Style TargetType="Grid" x:Key="LeftAndBotPanelGrid">
             <Setter Property="Background" Value="#5B0888"/>
@@ -23,6 +30,11 @@
             <Setter Property="Background" Value="#713ABE"/>
             <Setter Property="BorderBrush" Value="#9D76C1"/>
             <Setter Property="Foreground" Value="#E5CFF7"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="TBoxAdd" BasedOn="{StaticResource TBoxLeftPanel}">
+            <Setter Property="Width" Value="110"/>
         </Style>
         <Style TargetType="Grid" x:Key="GridUp">
             <Setter Property="Background" Value="#9D76C1"/>
@@ -49,6 +61,9 @@
         </Style>
         <Style TargetType="Button" x:Key="ButtonMain">
             <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="110"/>
         </Style>
     </Application.Resources>
 </Application>

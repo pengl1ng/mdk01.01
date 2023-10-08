@@ -7,23 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ScientistsApp
+namespace ScientistsApp.Helpers
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Conferences
+    public partial class Scientists
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Conferences()
+        public Scientists()
         {
             this.Reports = new HashSet<Reports>();
         }
     
-        public int ConfId { get; set; }
-        public string ConfName { get; set; }
-        public System.DateTime ConfDate { get; set; }
-        public string ConfPlace { get; set; }
+        public int ScId { get; set; }
+        public string ScFIO { get; set; }
+        public string ScDeg { get; set; }
+        public string ScCountry { get; set; }
+        public string ScOrg { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reports> Reports { get; set; }

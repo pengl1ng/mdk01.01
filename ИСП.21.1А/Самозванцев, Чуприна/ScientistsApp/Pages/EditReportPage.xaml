@@ -25,12 +25,14 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Автор:"/>
                     <ComboBox x:Name="cboxAuthor"
-                          SelectionChanged="cboxAuthor_SelectionChanged"/>
+                              SelectedValue="{Binding RepAuthor}"
+                              SelectionChanged="cboxAuthor_SelectionChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Конференция:"/>
                     <ComboBox x:Name="cboxConf"
-                          SelectionChanged="cboxConf_SelectionChanged"/>
+                              SelectedValue="{Binding RepConf}"
+                              SelectionChanged="cboxConf_SelectionChanged"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

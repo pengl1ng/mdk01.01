@@ -22,22 +22,26 @@
 
         <Grid Grid.Row="0" Grid.Column="0" Margin="5">
             <StackPanel Orientation="Vertical" x:Name="spSci">
-                <TextBlock Text="Таблица Ученые"/>
+                <TextBlock Text="Таблица Ученые" Style="{StaticResource TBlockLeftPanel}"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="ФИО"/>
-                    <TextBox x:Name="tboxScFIO" Text="{Binding ScFIO}"/>
+                    <TextBlock Text="ФИО" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxScFIO" Text="{Binding ScFIO}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Ученая степень"/>
-                    <TextBox x:Name="tboxScDeg" Text="{Binding ScDeg}"/>
+                    <TextBlock Text="Ученая степень" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxScDeg" Text="{Binding ScDeg}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Страна"/>
-                    <TextBox x:Name="tboxScCountry" Text="{Binding ScCountry}"/>
+                    <TextBlock Text="Страна" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxScCountry" Text="{Binding ScCountry}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Организация"/>
-                    <TextBox x:Name="tboxScOrg" Text="{Binding ScOrg}"/>
+                    <TextBlock Text="Организация" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxScOrg" Text="{Binding ScOrg}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <Button x:Name="btnSaveSci" Content="Сохранить ученого"
                         Click="btnSaveSci_Click"/>
@@ -46,18 +50,21 @@
 
         <Grid Grid.Row="0" Grid.Column="1" Margin="5">
             <StackPanel Orientation="Vertical" x:Name="spConf">
-                <TextBlock Text="Таблица Конференции"/>
+                <TextBlock Text="Таблица Конференции" Style="{StaticResource TBlockLeftPanel}"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Название"/>
-                    <TextBox x:Name="tboxConfName" Text="{Binding ConfName}"/>
+                    <TextBlock Text="Название" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxConfName" Text="{Binding ConfName}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Дата проведения"/>
-                    <TextBox x:Name="tboxConfDate" Text="{Binding ConfDate}"/>
+                    <TextBlock Text="Дата проведения" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxConfDate" Text="{Binding ConfDate}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Место проведения"/>
-                    <TextBox x:Name="tboxConfPlace" Text="{Binding ConfPlace}"/>
+                    <TextBlock Text="Место проведения" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxConfPlace" Text="{Binding ConfPlace}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <Button x:Name="btnSaveConf" Content="Сохранить конференцию"
                         Click="btnSaveConf_Click"/>
@@ -66,17 +73,18 @@
         
         <Grid Grid.Row="0" Grid.Column="2" Margin="5">
             <StackPanel Orientation="Vertical" x:Name="spRep">
-                <TextBlock Text="Таблица Доклады"/>
+                <TextBlock Text="Таблица Доклады" Style="{StaticResource TBlockLeftPanel}"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Название"/>
-                    <TextBox x:Name="tboxRepTheme" Text="{Binding RepTheme}"/>
+                    <TextBlock Text="Название" Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxRepTheme" Text="{Binding RepTheme}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Автор"/>
+                    <TextBlock Text="Автор" Style="{StaticResource TBlockAdd}"/>
                     <ComboBox x:Name="cboxRepAuthor"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Конференция"/>
+                    <TextBlock Text="Конференция" Style="{StaticResource TBlockAdd}"/>
                     <ComboBox x:Name="cboxRepConf"/>
                 </StackPanel>
                 <Button x:Name="btnSaveRep" Content="Сохранить доклад"

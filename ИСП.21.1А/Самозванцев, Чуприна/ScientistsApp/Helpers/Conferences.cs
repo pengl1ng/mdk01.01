@@ -7,19 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ScientistsApp
+namespace ScientistsApp.Helpers
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Reports
+    public partial class Conferences
     {
-        public int RepId { get; set; }
-        public string RepTheme { get; set; }
-        public int RepAuthor { get; set; }
-        public int RepConf { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Conferences()
+        {
+            this.Reports = new HashSet<Reports>();
+        }
     
-        public virtual Conferences Conferences { get; set; }
-        public virtual Scientists Scientists { get; set; }
+        public int ConfId { get; set; }
+        public string ConfName { get; set; }
+        public System.DateTime ConfDate { get; set; }
+        public string ConfPlace { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reports> Reports { get; set; }
     }
 }

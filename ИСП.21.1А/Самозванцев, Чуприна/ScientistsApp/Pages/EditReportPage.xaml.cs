@@ -29,28 +29,24 @@ namespace ScientistsApp.Pages
             report = reports;
             InitializeComponent();
             DataContext = report;
-            var sci = context.Scientists.Select(x => x.ScFIO).Distinct().ToList();
-            var conf = context.Conferences.Select(x => x.ConfName).Distinct().ToList();
-            foreach (var sc in sci)
-            {
-                cboxAuthor.Items.Add(sc);
-            }
-            foreach (var cf in conf)
-            {
-                cboxConf.Items.Add(cf);
-            }
-            cboxAuthor.SelectedValue = reports.Scientists.ScFIO;
-            cboxConf.SelectedValue = reports.Conferences.ConfName;
+
+            cboxAuthor.ItemsSource = context.Scientists.ToList();
+            cboxAuthor.SelectedValuePath = "ScId";
+            cboxAuthor.DisplayMemberPath = "ScFIO";
+
+            cboxConf.ItemsSource = context.Conferences.ToList();
+            cboxConf.SelectedValuePath = "ConfId";
+            cboxConf.DisplayMemberPath = "ConfName";
         }
 
         private void cboxAuthor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            report.RepAuthor = context.Scientists.FirstOrDefault(x => x.ScFIO == cboxAuthor.SelectedValue.ToString()).ScId;
+            //report.RepAuthor = context.Scientists.FirstOrDefault(x => x.ScFIO == cboxAuthor.SelectedValue.ToString()).ScId;
         }
 
         private void cboxConf_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            report.RepConf = context.Conferences.FirstOrDefault(x => x.ConfName == cboxConf.SelectedValue.ToString()).ConfId;
+            //report.RepConf = context.Conferences.FirstOrDefault(x => x.ConfName == cboxConf.SelectedValue.ToString()).ConfId;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

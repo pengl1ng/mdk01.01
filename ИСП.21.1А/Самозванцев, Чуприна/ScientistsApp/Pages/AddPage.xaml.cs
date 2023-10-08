@@ -44,18 +44,8 @@ namespace ScientistsApp.Pages
                 cboxRepAuthor.Items.Clear();
                 cboxRepConf.Items.Clear();
 
-                var sc = context.Scientists.Select(x => x.ScFIO).Distinct().ToList();
-                var cf = context.Conferences.Select(x => x.ConfName).Distinct().ToList();
-
-                foreach (var a in sc)
-                {
-                    cboxRepAuthor.Items.Add(a);
-                }
-
-                foreach (var c in cf)
-                {
-                    cboxRepConf.Items.Add(c);
-                }
+                cboxRepAuthor.ItemsSource = context.Scientists.Select(x => x.ScFIO).Distinct().ToList();
+                cboxRepConf.ItemsSource = context.Conferences.Select(x => x.ConfName).Distinct().ToList();
             }
             catch (Exception ex)
             {

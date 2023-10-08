@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ScientistsApp
+namespace ScientistsApp.Helpers
 {
     using System;
     using System.Data.Entity;
