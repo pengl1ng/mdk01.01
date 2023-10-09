@@ -24,10 +24,6 @@ D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\Scie
 D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\MainPage.g.cs
 D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\MainPage.baml
 D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\App.baml
-D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddPage.g.cs
-D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\EditReportPage.g.cs
-D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddPage.baml
-D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\EditReportPage.baml
 C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\bin\Debug\ScientistsApp.exe.config
 C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\bin\Debug\ScientistsApp.exe
 C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\bin\Debug\ScientistsApp.pdb
@@ -57,3 +53,13 @@ C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев,
 C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\ScientistsApp.csproj.CopyComplete
 C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\ScientistsApp.exe
 C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\ScientistsApp.pdb
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddEditReportsPage.g.cs
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddEditReportsPage.baml
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\ScientistsPage.g.cs
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\ScientistsPage.baml
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddEditScientistPage.g.cs
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddEditScientistPage.baml
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddEditConferencePage.g.cs
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\ConferencesPage.g.cs
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\AddEditConferencePage.baml
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\ConferencesPage.baml

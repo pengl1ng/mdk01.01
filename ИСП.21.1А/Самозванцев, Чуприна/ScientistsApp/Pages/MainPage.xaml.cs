@@ -70,7 +70,7 @@ namespace ScientistsApp.Pages
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AppHelper.mainFrame.Navigate(new AddPage());
+            AppHelper.mainFrame.Navigate(new AddEditReportsPage(new Reports()));
         }
         /// <summary>
         /// Удаление доклада
@@ -79,17 +79,17 @@ namespace ScientistsApp.Pages
         /// <param name="e"></param>
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            var selectedSci = dgReports.SelectedItems.Cast<Reports>().ToList();
+            var selectedRep = dgReports.SelectedItems.Cast<Reports>().ToList();
 
-            if ((MessageBox.Show($"Удалить информацию о {selectedSci.Count} докладах?",
+            if ((MessageBox.Show($"Удалить информацию о {selectedRep.Count} докладах?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question)
                 == MessageBoxResult.Yes))
             {
                 try
                 {
-                    DbEntities.GetContext().Reports.RemoveRange(selectedSci);
-                    DbEntities.GetContext().SaveChanges();
-                    reports = DbEntities.GetContext().Reports.ToList();
+                    context.Reports.RemoveRange(selectedRep);
+                    context.SaveChanges();
+                    reports = context.Reports.ToList();
                     dgReports.ItemsSource = reports;
                 }
                 catch (Exception ex)
@@ -115,7 +115,7 @@ namespace ScientistsApp.Pages
         /// <param name="e"></param>
         private void btnChangeRep_Click(object sender, RoutedEventArgs e)
         {
-            AppHelper.mainFrame.Navigate(new EditReportPage((sender as Button).DataContext as Reports));
+            AppHelper.mainFrame.Navigate(new AddEditReportsPage((sender as Button).DataContext as Reports));
         }
         /// <summary>
         /// Очистка фильтров
@@ -129,6 +129,16 @@ namespace ScientistsApp.Pages
             tboxSearch.Text = "";
             current = reports;
             dgReports.ItemsSource = current;
+        }
+
+        private void btnToSci_Click(object sender, RoutedEventArgs e)
+        {
+            AppHelper.mainFrame.Navigate(new ScientistsPage());
+        }
+
+        private void btnToConfs_Click(object sender, RoutedEventArgs e)
+        {
+            AppHelper.mainFrame.Navigate(new ConferencesPage());
         }
     }
 }

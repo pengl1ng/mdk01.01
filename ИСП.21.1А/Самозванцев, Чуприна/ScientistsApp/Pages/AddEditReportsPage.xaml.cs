@@ -17,14 +17,13 @@ using System.Windows.Shapes;
 namespace ScientistsApp.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EditReportPage.xaml
+    /// Логика взаимодействия для AddEditReportsPage.xaml
     /// </summary>
-    public partial class EditReportPage : Page
+    public partial class AddEditReportsPage : Page
     {
         DbEntities context = DbEntities.GetContext();
-        Reports report = new Reports();
-
-        public EditReportPage(Reports reports)
+        Reports report;
+        public AddEditReportsPage(Reports reports)
         {
             report = reports;
             InitializeComponent();
@@ -39,29 +38,18 @@ namespace ScientistsApp.Pages
             cboxConf.DisplayMemberPath = "ConfName";
         }
 
-        private void cboxAuthor_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //report.RepAuthor = context.Scientists.FirstOrDefault(x => x.ScFIO == cboxAuthor.SelectedValue.ToString()).ScId;
-        }
-
-        private void cboxConf_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //report.RepConf = context.Conferences.FirstOrDefault(x => x.ConfName == cboxConf.SelectedValue.ToString()).ConfId;
-        }
-
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (tboxRepName.Text != "")
+            try
             {
-                try
-                {
-                    report.RepTheme = tboxRepName.Text;
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                if (report.RepId == 0 && context.Reports.FirstOrDefault(x => x.RepTheme == report.RepTheme) == null) context.Reports.Add(report);
+                context.SaveChanges();
+                MessageBox.Show("Данные сохранены");
+                AppHelper.mainFrame.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

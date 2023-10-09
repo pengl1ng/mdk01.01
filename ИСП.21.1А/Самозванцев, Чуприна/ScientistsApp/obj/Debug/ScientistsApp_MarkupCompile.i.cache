@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\
 ScientistsApp
 none
 false
 DEBUG;TRACE
-C:\Users\student\Documents\GitHub\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\App.xaml
-4-681817556
-2-511710427
-16-1811186477
-19-736675820
-MainWindow.xaml;Pages\AddPage.xaml;Pages\EditReportPage.xaml;Pages\MainPage.xaml;
+D:\ProjectsC#\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\App.xaml
+72124753388
+22121224353
+19-1609783734
+19-566857452
+MainWindow.xaml;Pages\AddEditConferencePage.xaml;Pages\AddEditReportsPage.xaml;Pages\AddEditScientistPage.xaml;Pages\ConferencesPage.xaml;Pages\MainPage.xaml;Pages\ScientistsPage.xaml;
 
 True
 

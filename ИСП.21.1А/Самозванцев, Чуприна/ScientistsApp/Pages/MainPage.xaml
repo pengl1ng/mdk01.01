@@ -63,6 +63,12 @@
                 <Button x:Name="btnRef" Content="Обновить"
                         Click="btnRef_Click"
                         Style="{StaticResource ButtonMain}"/>
+                <Button x:Name="btnToSci" Content="К ученым"
+                        Click="btnToSci_Click"
+                        Style="{StaticResource ButtonMain}"/>
+                <Button x:Name="btnToConfs" Content="К конференциям"
+                        Click="btnToConfs_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 

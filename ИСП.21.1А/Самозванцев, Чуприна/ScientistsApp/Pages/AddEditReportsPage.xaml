@@ -1,4 +1,4 @@
-﻿<Page x:Class="ScientistsApp.Pages.EditReportPage"
+﻿<Page x:Class="ScientistsApp.Pages.AddEditReportsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ScientistsApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EditReportPage">
+      Title="AddEditReportsPage">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,20 +19,22 @@
                     HorizontalAlignment="Center"
                     Grid.Row="0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Название доклада:"/>
-                    <TextBox x:Name="tboxRepName" Text="{Binding RepTheme}"/>
+                    <TextBlock Text="Название доклада:"
+                               Style="{StaticResource TBlockAdd}"/>
+                    <TextBox x:Name="tboxRepName" Text="{Binding RepTheme}"
+                             Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Автор:"/>
+                    <TextBlock Text="Автор:" 
+                               Style="{StaticResource TBlockAdd}"/>
                     <ComboBox x:Name="cboxAuthor"
-                              SelectedValue="{Binding RepAuthor}"
-                              SelectionChanged="cboxAuthor_SelectionChanged"/>
+                              SelectedValue="{Binding RepAuthor}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Конференция:"/>
+                    <TextBlock Text="Конференция:"
+                               Style="{StaticResource TBlockAdd}"/>
                     <ComboBox x:Name="cboxConf"
-                              SelectedValue="{Binding RepConf}"
-                              SelectionChanged="cboxConf_SelectionChanged"/>
+                              SelectedValue="{Binding RepConf}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
