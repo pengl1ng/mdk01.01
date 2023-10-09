@@ -37,14 +37,16 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Style="{StaticResource LeftAndBotPanelGrid}">
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                 <Button x:Name="btnSave" Content="Сохранить"
-                        Click="btnSave_Click"/>
+                        Click="btnSave_Click"
+                        Style="{StaticResource ButtonMain}"/>
                 <Button x:Name="btnGoBack" Content="Вернуться"
-                        Click="btnGoBack_Click"/>
+                        Click="btnGoBack_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
     </Grid>

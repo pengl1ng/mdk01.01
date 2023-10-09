@@ -41,9 +41,6 @@ namespace ScientistsApp.Pages
         {
             try
             {
-                cboxRepAuthor.Items.Clear();
-                cboxRepConf.Items.Clear();
-
                 cboxRepAuthor.ItemsSource = context.Scientists.Select(x => x.ScFIO).Distinct().ToList();
                 cboxRepConf.ItemsSource = context.Conferences.Select(x => x.ConfName).Distinct().ToList();
             }

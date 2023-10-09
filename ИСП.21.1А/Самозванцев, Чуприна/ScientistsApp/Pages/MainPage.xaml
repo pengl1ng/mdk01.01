@@ -7,8 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
-    
+      xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -47,7 +46,8 @@
                 </StackPanel>
 
                 <Button x:Name="btnClearFilters" Content="Очистить фильтры"
-                        Click="btnClearFilters_Click" Margin="5"/>
+                        Click="btnClearFilters_Click" Margin="5"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 

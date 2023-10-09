@@ -44,7 +44,8 @@
                              Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <Button x:Name="btnSaveSci" Content="Сохранить ученого"
-                        Click="btnSaveSci_Click"/>
+                        Click="btnSaveSci_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 
@@ -67,7 +68,8 @@
                              Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <Button x:Name="btnSaveConf" Content="Сохранить конференцию"
-                        Click="btnSaveConf_Click"/>
+                        Click="btnSaveConf_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
         
@@ -88,14 +90,19 @@
                     <ComboBox x:Name="cboxRepConf"/>
                 </StackPanel>
                 <Button x:Name="btnSaveRep" Content="Сохранить доклад"
-                        Click="btnSaveRep_Click"/>
+                        Click="btnSaveRep_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource LeftAndBotPanelGrid}">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button x:Name="btnUpdate" Content="Обновить" Click="btnUpdate_Click" Margin="5"/>
-                <Button x:Name="btnGoBack" Content="Вернуться" Click="btnGoBack_Click" Margin="5"/>
+                <Button x:Name="btnUpdate" Content="Обновить" 
+                        Click="btnUpdate_Click"
+                        Style="{StaticResource ButtonMain}"/>
+                <Button x:Name="btnGoBack" Content="Вернуться" 
+                        Click="btnGoBack_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
     </Grid>
