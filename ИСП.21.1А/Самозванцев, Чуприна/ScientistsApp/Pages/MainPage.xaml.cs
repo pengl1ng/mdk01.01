@@ -105,7 +105,7 @@ namespace ScientistsApp.Pages
         /// <param name="e"></param>
         private void btnRef_Click(object sender, RoutedEventArgs e)
         {
-            reports = DbEntities.GetContext().Reports.ToList();
+            reports = context.Reports.ToList();
             dgReports.ItemsSource = reports;
         }
         /// <summary>
