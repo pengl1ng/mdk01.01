@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ScientistsApp.Pages
 {
@@ -144,6 +145,35 @@ namespace ScientistsApp.Pages
         private void btnToLv_Click(object sender, RoutedEventArgs e)
         {
             AppHelper.mainFrame.Navigate(new ReportsLvPage());
+        }
+
+        private void btnPrintToExcel_Click(object sender, RoutedEventArgs e)
+        {
+            var app = new Excel.Application();
+
+            Excel.Workbook wb = app.Workbooks.Add();
+            Excel.Worksheet ws = app.Worksheets.Item[1];
+
+            int indexRows = 1;
+
+            ws.Cells[1][indexRows] = "Номер";
+            ws.Cells[2][indexRows] = "Тема доклада";
+            ws.Cells[3][indexRows] = "ФИО докладчика";
+            ws.Cells[4][indexRows] = "Конференция";
+            ws.Cells[5][indexRows] = "Дата доклада";
+
+            var listReps = context.Reports.ToList();
+            foreach (var reps in listReps)
+            {
+                indexRows++;
+                ws.Cells[1][indexRows] = indexRows - 1;
+                ws.Cells[2][indexRows] = reps.RepTheme;
+                ws.Cells[3][indexRows] = reps.Scientists.ScFIO;
+                ws.Cells[4][indexRows] = reps.Conferences.ConfName;
+                ws.Cells[5][indexRows] = reps.Conferences.ConfDate;
+            }
+
+            app.Visible = true;
         }
     }
 }

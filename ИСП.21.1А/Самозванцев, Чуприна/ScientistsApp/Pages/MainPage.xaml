@@ -48,6 +48,9 @@
                 <Button x:Name="btnClearFilters" Content="Очистить фильтры"
                         Click="btnClearFilters_Click" Margin="5"
                         Style="{StaticResource ButtonMain}"/>
+                <Button x:Name="btnPrintToExcel" Content="Печать в Excel"
+                        Click="btnPrintToExcel_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 
