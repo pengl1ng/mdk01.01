@@ -140,5 +140,10 @@ namespace ScientistsApp.Pages
         {
             AppHelper.mainFrame.Navigate(new ConferencesPage());
         }
+
+        private void btnToLv_Click(object sender, RoutedEventArgs e)
+        {
+            AppHelper.mainFrame.Navigate(new ReportsLvPage());
+        }
     }
 }
