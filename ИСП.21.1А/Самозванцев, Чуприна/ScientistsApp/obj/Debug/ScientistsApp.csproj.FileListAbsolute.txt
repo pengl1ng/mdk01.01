@@ -133,3 +133,5 @@ C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, �
 C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\ScientistsApp.csproj.CopyComplete
 C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\ScientistsApp.exe
 C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\ScientistsApp.pdb
+C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\ReportsLvPage.g.cs
+C:\Users\Студент\Desktop\mdk01.01\ИСП.21.1А\Самозванцев, Чуприна\ScientistsApp\obj\Debug\Pages\ReportsLvPage.baml

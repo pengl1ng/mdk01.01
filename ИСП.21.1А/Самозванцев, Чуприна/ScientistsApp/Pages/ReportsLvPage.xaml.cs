@@ -21,9 +21,11 @@ namespace ScientistsApp.Pages
     /// </summary>
     public partial class ReportsLvPage : Page
     {
+        DbEntities context = DbEntities.GetContext();
         public ReportsLvPage()
         {
             InitializeComponent();
+            lvReports.ItemsSource = context.Reports.ToList();
         }
 
         private void btnGoBack_Click(object sender, RoutedEventArgs e)

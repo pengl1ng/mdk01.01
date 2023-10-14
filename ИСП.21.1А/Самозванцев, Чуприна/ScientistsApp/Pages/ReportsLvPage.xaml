@@ -14,8 +14,53 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="lvReports" Grid.Row="0">
-            
+        <ListView x:Name="lvReports" Grid.Row="0" Background="#713ABE"
+                  HorizontalContentAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding RepTheme}" 
+                                   Style="{StaticResource TBlockLeftPanel}"
+                                   Width="Auto"
+                                   HorizontalAlignment="Center"/>
+                        <Image Height="50"
+                               Width="75"
+                               Margin="5"
+                               HorizontalAlignment="Center">
+                            <Image.Source>
+                                <Binding Path="RepImage">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/Images/standart-img.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <StackPanel Orientation="Horizontal" Margin="5"
+                                    HorizontalAlignment="Center">
+                            <TextBlock Text="ФИО автора:" Style="{StaticResource TBlockLeftPanel}"/>
+                            <TextBlock Text="{Binding Scientists.ScFIO}" Margin="5"
+                                       Foreground="#E5CFF7"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="5"
+                                    HorizontalAlignment="Center">
+                            <TextBlock Text="Конференция:" Style="{StaticResource TBlockLeftPanel}"/>
+                            <TextBlock Text="{Binding Conferences.ConfName}" 
+                                       Style="{StaticResource TBlockLeftPanel}"
+                                       Width="Auto"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="5"
+                                    HorizontalAlignment="Center">
+                            <TextBlock Text="Дата выступления:" Style="{StaticResource TBlockLeftPanel}"/>
+                            <TextBlock Text="{Binding Conferences.ConfDate}"
+                                       Style="{StaticResource TBlockLeftPanel}"
+                                       Width="Auto"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
         <Grid Grid.Row="1" Style="{StaticResource LeftAndBotPanelGrid}">

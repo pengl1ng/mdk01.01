@@ -137,12 +137,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ReportsLvPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ScientistsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\ReportsLvPage.xaml.cs">
+      <DependentUpon>ReportsLvPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ScientistsPage.xaml.cs">
       <DependentUpon>ScientistsPage.xaml</DependentUpon>
     </Compile>
@@ -193,9 +200,9 @@
       <DependentUpon>DbModel.edmx</DependentUpon>
       <LastGenOutput>DbModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\image1.jpg" />
+    <Resource Include="Images\standart-img.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

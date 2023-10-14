@@ -20,17 +20,16 @@
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Название" Style="{StaticResource TBlockAdd}"/>
-                    <TextBox x:Name="tboxScFIO" Text="{Binding ConfName}"
+                    <TextBox Text="{Binding ConfName}"
                              Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Дата" Style="{StaticResource TBlockAdd}"/>
-                    <TextBox x:Name="tboxScDeg" Text="{Binding ConfDate}"
-                             Style="{StaticResource TBoxAdd}"/>
+                    <DatePicker DisplayDate="{Binding ConfDate}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Место проведения" Style="{StaticResource TBlockAdd}"/>
-                    <TextBox x:Name="tboxScCountry" Text="{Binding ConfPlace}"
+                    <TextBox Text="{Binding ConfPlace}"
                              Style="{StaticResource TBoxAdd}"/>
                 </StackPanel>
             </StackPanel>
