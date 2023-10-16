@@ -51,6 +51,12 @@
                 <Button x:Name="btnPrintToExcel" Content="Печать в Excel"
                         Click="btnPrintToExcel_Click"
                         Style="{StaticResource ButtonMain}"/>
+                <Button x:Name="btnPrintShab" Content="Вывод шаблоном"
+                        Click="btnPrintShab_Click"
+                        Style="{StaticResource ButtonMain}"/>
+                <Button x:Name="btnPrintWord" Content="Печать в Word"
+                        Click="btnPrintWord_Click"
+                        Style="{StaticResource ButtonMain}"/>
             </StackPanel>
         </Grid>
 
