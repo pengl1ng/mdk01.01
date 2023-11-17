@@ -121,7 +121,7 @@ class Reports:
 
     def view_reports(self):
         self.cur.execute(
-            "select RepId, RepTheme, ScFIO, ScDeg, ScCountry, ScOrg, ConfName, ConfDate, ConfCountry from Reports R "
+            "select RepTheme, ScFIO, ScDeg, ScCountry, ScOrg, ConfName, ConfDate, ConfCountry from Reports R "
             "join Scientists S on R.RepAuthor = S.ScId "
             "join Conferences C on R.RepConf = C.ConfId "
         )
@@ -131,7 +131,7 @@ class Reports:
     def create_report(self, rep_theme, rep_author, rep_conf):
         self.cur.execute(
             f"insert into Reports "
-            f"values(NULL, '{rep_theme}', '{rep_author}', '{rep_conf}' "
+            f"values(NULL, '{rep_theme}', {int(rep_author)}, {int(rep_conf)})"
         )
         self.con.commit()
 
