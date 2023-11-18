@@ -20,6 +20,26 @@ def add_report():
     author = int(rep_author.get())
     conf = int(rep_conf.get())
     tab_reports.create_report(theme, author, conf)
+    update()
+
+
+def del_report():
+    for selected_item in tw_reports.selection():
+        item = tw_reports.item(selected_item)
+        rep = item["values"]
+        tab_reports.delete_report(int(rep[0]))
+        update()
+
+
+def tree_item_select():
+    item = tw_reports.item(tw_reports.selection()[0])
+    rep = item["values"]
+    rep_theme.delete(0, END)
+    rep_author.delete(0, END)
+    rep_conf.delete(0, END)
+    rep_theme.insert(END, rep[1])
+    rep_author.insert(END, rep[2])
+    rep_conf.insert(END, rep[3])
 
 
 page = Tk()
@@ -56,8 +76,10 @@ frame_left.pack(side=LEFT, anchor=N)
 
 # Treeview
 frame_tw = ttk.Frame(frame_top, padding=5)
-columns = ('RepTheme', 'ScFIO', 'ScDeg', 'ScCountry', 'ScOrg', 'ConfName', 'ConfDate', 'ConfCountry')
-tw_reports = ttk.Treeview(frame_tw, columns=columns, show="headings")
+columns = ('RepId', 'RepTheme', 'RepAuthor', 'RepConf', 'ScFIO', 'ScDeg', 'ScCountry',
+           'ScOrg', 'ConfName', 'ConfDate', 'ConfCountry')
+display_col = ('RepTheme', 'ScFIO', 'ScDeg', 'ScCountry', 'ScOrg', 'ConfName', 'ConfDate', 'ConfCountry')
+tw_reports = ttk.Treeview(frame_tw, columns=columns, displaycolumns=display_col, show="headings")
 tw_reports.pack()
 tw_reports.heading('RepTheme', text='Тема доклада')
 tw_reports.heading('ScFIO', text='ФИО')
@@ -78,14 +100,15 @@ frame_top.pack(fill=X)
 # Нижний контейнер
 frame_bottom = ttk.Frame(frame_main, padding=5)
 
-btn_reports = ttk.Button(frame_bottom, text='Обновить', command=update)
-btn_reports.pack()
+btn_add_report = ttk.Button(frame_bottom, padding=5, text='Добавить доклад', command=add_report)
+btn_add_report.grid(row=0, column=0, columnspan=2)
 
-btn_add_report = ttk.Button(frame_bottom, text='Добавить доклад', command=add_report)
-btn_add_report.pack()
+btn_del_report = ttk.Button(frame_bottom, padding=5, text='Удалить доклад', command=del_report)
+btn_del_report.grid(row=0, column=2, columnspan=2)
 
-frame_bottom.pack(side=BOTTOM, fill=X)
+frame_bottom.pack(side=LEFT, fill=X)
 
 frame_main.pack(fill=Y)
 
+update()
 page.mainloop()

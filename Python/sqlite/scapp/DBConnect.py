@@ -121,7 +121,7 @@ class Reports:
 
     def view_reports(self):
         self.cur.execute(
-            "select RepTheme, ScFIO, ScDeg, ScCountry, ScOrg, ConfName, ConfDate, ConfCountry from Reports R "
+            "select RepID, RepTheme, RepAuthor, RepConf, ScFIO, ScDeg, ScOrg,  from Reports R "
             "join Scientists S on R.RepAuthor = S.ScId "
             "join Conferences C on R.RepConf = C.ConfId "
         )
