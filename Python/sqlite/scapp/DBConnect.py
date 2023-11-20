@@ -52,6 +52,24 @@ class Scientists:
         rows = self.cur.fetchall()
         return rows
 
+    def select_sci_fios(self):
+        self.cur.execute(
+            "select ScFIO from Scientists"
+        )
+        dbrows = self.cur.fetchall()
+        rows = []
+        for row in dbrows:
+            rows.append(row[0])
+        return rows
+
+    def find_sci_id(self, sc_fio):
+        self.cur.execute(
+            f"select ScId from Scientists "
+            f"where ScFIO = '{sc_fio}'"
+        )
+        sc_id = self.cur.fetchall()
+        return sc_id[0][0]
+
 
 class Conferences:
     def __init__(self):
@@ -103,6 +121,24 @@ class Conferences:
         rows = self.cur.fetchall()
         return rows
 
+    def select_confs_names(self):
+        self.cur.execute(
+            "select ConfName from Conferences"
+        )
+        dbrows = self.cur.fetchall()
+        rows = []
+        for row in dbrows:
+            rows.append(row[0])
+        return rows
+
+    def find_conf_id(self, conf_name):
+        self.cur.execute(
+            f"select ConfId from Conferences "
+            f"where ConfName = '{conf_name}'"
+        )
+        conf_id = self.cur.fetchall()
+        return conf_id[0][0]
+
 
 class Reports:
     def __init__(self):
@@ -121,7 +157,8 @@ class Reports:
 
     def view_reports(self):
         self.cur.execute(
-            "select RepID, RepTheme, RepAuthor, RepConf, ScFIO, ScDeg, ScOrg,  from Reports R "
+            "select RepID, RepTheme, RepAuthor, RepConf, ScFIO, ScDeg, ScCountry, ScOrg, ConfName, "
+            "ConfDate, ConfCountry from Reports R "
             "join Scientists S on R.RepAuthor = S.ScId "
             "join Conferences C on R.RepConf = C.ConfId "
         )
